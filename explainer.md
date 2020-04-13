@@ -44,7 +44,7 @@ Marking an element as a virtual content container establishes a contract between
 
 The following simplified example shows one potential usage pattern for `aria-virtualcontent`.
 
-```
+```html
 <html>
 <head>
   <script src="virtualcontent.js"></script>
@@ -67,7 +67,7 @@ The following simplified example shows one potential usage pattern for `aria-vir
 ```
 
 virtualcontent.js:
-```
+```js
 // Issues a request to the server for the next section of content.
 function begin_load_next_section() {
   // Issue request to server.
@@ -137,7 +137,7 @@ This example illustrates one use of `aria-virtualcontent` for virtualized conten
 
 In a fully-realized table, a typical AT would walk the table in row-major order, stopping and reading out each cell in turn. In this example, the content author has incorporated script that keeps only a subset of columns realized depending on viewport width, and the viewport width is such that the script will keep no more than five columns realized at a time. The AT achieves the same reading order as for a fully-realized table by checking for virtualized content in the inline direction whenever it's ready to advance from the last realized cell in a row.
 
-```
+```html
 <html>
 <body>
 <table aria-virtualcontent="block-end inline-end" aria-colcount="7">
